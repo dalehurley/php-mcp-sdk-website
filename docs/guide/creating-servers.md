@@ -180,7 +180,7 @@ $server->resource(
         }
 
         $userId = (int)$matches[1];
-        
+
         // Validate user exists
         if (!$this->userExists($userId)) {
             throw new McpError(
@@ -220,11 +220,11 @@ $server->resource(
         }
 
         $path = urldecode($matches[1]);
-        
+
         // Security: Restrict to allowed directories
         $allowedPaths = ['/var/www/project', '/home/user/documents'];
         $realPath = realpath($path);
-        
+
         if (!$realPath || !$this->isPathAllowed($realPath, $allowedPaths)) {
             throw new McpError(
                 ErrorCode::InvalidParams,
@@ -241,7 +241,7 @@ $server->resource(
 
         // Determine MIME type
         $mimeType = mime_content_type($realPath) ?: 'text/plain';
-        
+
         return [
             'contents' => [[
                 'uri' => $uri,
@@ -257,7 +257,7 @@ $server->resource(
 
 ### Context-Aware Prompts
 
-```php
+````php
 $server->prompt(
     'code_review',
     'Generate comprehensive code review prompts',
@@ -291,7 +291,7 @@ $server->prompt(
 
         // Build context-specific prompt
         $prompt = "You are an expert {$language} code reviewer. ";
-        
+
         if ($severityLevel === 'strict') {
             $prompt .= "Apply strict coding standards and best practices. ";
         } elseif ($severityLevel === 'lenient') {
@@ -314,7 +314,7 @@ $server->prompt(
         ];
     }
 );
-```
+````
 
 ## 🔐 Security & Validation
 
@@ -327,15 +327,15 @@ class SecurityValidator
     {
         // Remove null bytes and control characters
         $input = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/', '', $input);
-        
+
         // Trim whitespace
         $input = trim($input);
-        
+
         // Limit length
         if (strlen($input) > $maxLength) {
             $input = substr($input, 0, $maxLength);
         }
-        
+
         return $input;
     }
 
@@ -392,14 +392,14 @@ class RateLimiter
 
         // Check rate limit
         $requestCount = count($this->requests[$clientId] ?? []);
-        
+
         if ($requestCount >= $this->maxRequests) {
             return false;
         }
 
         // Record this request
         $this->requests[$clientId][] = $now;
-        
+
         return true;
     }
 }
@@ -527,7 +527,7 @@ class PluginManager
     public function loadPlugin(McpPlugin $plugin): void
     {
         $name = $plugin->getName();
-        
+
         if (isset($this->plugins[$name])) {
             throw new \InvalidArgumentException("Plugin '{$name}' is already loaded");
         }
@@ -579,7 +579,7 @@ class AuthenticationMiddleware implements McpMiddleware
         }
 
         $token = $request['params']['auth_token'] ?? null;
-        
+
         if (!$token || !in_array($token, $this->validTokens)) {
             throw new McpError(
                 ErrorCode::Unauthorized,
@@ -635,7 +635,7 @@ class McpServerTest extends TestCase
     public function testToolRegistration(): void
     {
         $tools = $this->server->listTools();
-        
+
         $this->assertNotEmpty($tools['tools']);
         $this->assertArrayHasKey('process_document', $tools['tools']);
     }
@@ -703,7 +703,7 @@ class ServerConfig
         }
 
         $config = json_decode(file_get_contents($configPath), true);
-        
+
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new \InvalidArgumentException("Invalid JSON in config file");
         }
@@ -802,7 +802,7 @@ $server->tool(
 1. **[Authentication Guide](authentication)** - Add security to your servers
 2. **[Transport Guide](transports)** - Learn about different transport options
 3. **[Performance Guide](performance)** - Optimize for production
-4. **[Real-World Examples](../examples/real-world/)** - See complete applications
+4. **[Real-World Examples](../examples/real-world/blog-cms)** - See complete applications
 
 ## 📖 Additional Resources
 

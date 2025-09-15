@@ -224,7 +224,7 @@ class LearningAgent extends Agent
 ## Getting Started
 
 1. **[Basic Agent Tutorial](building-agents)** - Create your first AI agent
-2. **[Working Examples](../examples/agentic-ai/)** - Study complete implementations
+2. **[Working Examples](building-agents)** - Study complete implementations
 3. **[Best Practices](best-practices)** - Learn proven patterns
 4. **[Community Examples](https://github.com/dalehurley/php-mcp-sdk/discussions)** - Share and learn
 
@@ -250,7 +250,7 @@ composer require symfony/messenger   # For async processing
 Join the growing community of agentic AI developers:
 
 - [GitHub Discussions](https://github.com/dalehurley/php-mcp-sdk/discussions)
-- [Example Gallery](../examples/agentic-ai/)
+- [Example Gallery](building-agents)
 - [Best Practices Guide](best-practices)
 
 Ready to build intelligent agents? Start with [Building AI Agents](building-agents)! 🤖

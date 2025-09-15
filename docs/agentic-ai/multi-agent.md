@@ -847,4 +847,4 @@ class LoadBalancedAgentPool
 - [Building AI Agents](building-agents) - Individual agent development
 - [Agent Orchestration](orchestration) - Advanced coordination patterns
 - [Best Practices](best-practices) - Production patterns
-- [Examples](../examples/agentic-ai/) - Working multi-agent examples
+- [Examples](building-agents) - Working multi-agent examples

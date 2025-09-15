@@ -368,9 +368,9 @@ Now that you've created your first MCP server, here are the next steps:
 
 ### 🛠️ Build Advanced Features
 
-- [Creating Servers](../guides/creating-servers) - Production-ready servers
-- [Authentication](../guides/authentication) - Secure your servers
-- [Transport Options](../guides/transports) - HTTP, WebSocket, and more
+- [Creating Servers](creating-servers) - Production-ready servers
+- [Authentication](authentication) - Secure your servers
+- [Transport Options](transports) - HTTP, WebSocket, and more
 
 ### 🏗️ Framework Integration
 
@@ -385,8 +385,8 @@ Now that you've created your first MCP server, here are the next steps:
 ### 🎯 Examples
 
 - [Hello World Examples](../examples/hello-world) - Simple starting points
-- [Real-World Applications](../examples/real-world/) - Complete applications
-- [Enterprise Examples](../examples/enterprise/) - Production deployments
+- [Real-World Applications](../examples/real-world/blog-cms) - Complete applications
+- [Enterprise Examples](../examples/enterprise/docker-deployment) - Production deployments
 
 ## Getting Help
 

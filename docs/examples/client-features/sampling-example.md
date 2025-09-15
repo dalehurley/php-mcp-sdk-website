@@ -894,4 +894,4 @@ echo '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"ai_assista
 - [MCP Sampling Specification](https://modelcontextprotocol.io/specification/2025-06-18/client/sampling)
 - [OpenAI Integration Guide](../../integrations/openai)
 - [Sampling Guide](../../guide/sampling)
-- [Agentic AI Examples](../agentic-ai/)
+- [Agentic AI Examples](../../agentic-ai/)

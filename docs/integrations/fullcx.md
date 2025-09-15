@@ -460,6 +460,6 @@ Agent: Generates detailed sprint progress with burndown metrics
 ## See Also
 
 - [FullCX API Documentation](https://docs.fullcx.com)
-- [Product Management Examples](../examples/fullcx/)
+- [Product Management Examples](../examples/real-world/task-manager)
 - [OpenAI Integration](openai)
 - [MCP Client API](../api/client)

@@ -537,10 +537,10 @@ Now that you have a working server, here are some ideas to explore:
 
 ### Real-World Examples
 
-- [📊 Analytics Server](../examples/real-world/analytics-server/) - Data analysis tools
-- [📝 Blog CMS](../examples/real-world/blog-cms/) - Content management
-- [🤖 AI Assistant](../examples/agentic-ai/) - AI-powered tools
-- [📱 API Gateway](../examples/real-world/api-gateway/) - Service orchestration
+- [📊 Data Pipeline](../examples/real-world/data-pipeline) - Data analysis tools
+- [📝 Blog CMS](../examples/real-world/blog-cms) - Content management
+- [🤖 AI Assistant](../agentic-ai/) - AI-powered tools
+- [📱 API Gateway](../examples/real-world/api-gateway) - Service orchestration
 
 ## 🆘 Need Help?
 

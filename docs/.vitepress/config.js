@@ -5,6 +5,9 @@ export default defineConfig({
   description:
     "Model Context Protocol implementation for PHP - Build intelligent AI agents and applications",
 
+  // Re-enable dead link checking to identify issues
+  ignoreDeadLinks: false,
+
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
     ["meta", { name: "theme-color", content: "#646cff" }],

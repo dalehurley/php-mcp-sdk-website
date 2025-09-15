@@ -137,4 +137,4 @@ class SecureTokenStorage
 
 - [Authentication API](../api/authentication)
 - [Security Best Practices](security)
-- [OAuth Examples](../examples/oauth/)
+- [OAuth Examples](../integrations/openai)

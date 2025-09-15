@@ -563,4 +563,4 @@ async(function () use ($server) {
 - [Server API](server) - Server implementation with auth
 - [Client API](client) - Client authentication patterns
 - [Security Guide](../guide/security) - Security best practices
-- [OAuth Examples](../examples/oauth/) - Working OAuth implementations
+- [OAuth Examples](../integrations/openai) - Working OAuth implementations

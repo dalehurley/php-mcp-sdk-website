@@ -1102,6 +1102,6 @@ class ElicitationExampleTest extends TestCase
 ## See Also
 
 - [MCP Elicitation Specification](https://modelcontextprotocol.io/specification/2025-06-18/client/elicitation)
-- [User Interface Examples](../interactive/)
+- [User Interface Examples](../hello-world)
 - [Elicitation Guide](../../guide/elicitation)
 - [Security Best Practices](../../guide/security)

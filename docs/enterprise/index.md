@@ -207,7 +207,7 @@ Ready to implement PHP MCP SDK in your enterprise?
 
 ## 📚 Resources
 
-- [Enterprise Architecture Guide](../guides/enterprise-architecture)
+- [Enterprise Architecture Guide](../guide/concepts)
 - [Security Best Practices](security)
 - [Performance Optimization](scaling)
 - [Deployment Patterns](deployment)

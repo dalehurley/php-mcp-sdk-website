@@ -44,15 +44,15 @@ Full Symfony integration with dependency injection container and event system.
 
 Build intelligent AI agents that can reason and coordinate:
 
-#### [Working Agentic Demo](../agentic-ai/working-demo)
+#### [Building AI Agents](../agentic-ai/building-agents)
 
 Rule-based agent reasoning with decision trees and context awareness.
 
-#### [Personal Assistant Agent](../agentic-ai/personal-assistant)
+#### [Multi-Agent Systems](../agentic-ai/multi-agent)
 
 Multi-MCP server coordination for complex task management.
 
-#### [Multi-Agent Orchestrator](../agentic-ai/multi-agent-orchestrator)
+#### [Agent Orchestration](../agentic-ai/orchestration)
 
 Specialized agent coordination with role-based task distribution.
 
@@ -517,7 +517,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 ## 📖 Additional Resources
 
-- [PHP MCP SDK Documentation](../guide/)
+- [PHP MCP SDK Documentation](../guide/getting-started)
 - [MCP Protocol Specification](https://modelcontextprotocol.io)
 - [TypeScript SDK Examples](https://github.com/modelcontextprotocol/typescript-sdk/tree/main/src/examples)
 - [Laravel Documentation](https://laravel.com/docs)

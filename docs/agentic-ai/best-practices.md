@@ -876,4 +876,4 @@ class DocumentedAgent extends Agent
 - [Building AI Agents](building-agents) - Individual agent development
 - [Multi-Agent Systems](multi-agent) - Agent coordination
 - [Agent Orchestration](orchestration) - Advanced coordination
-- [Examples](../examples/agentic-ai/) - Working agent implementations
+- [Examples](building-agents) - Working agent implementations

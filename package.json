@@ -1,0 +1,28 @@
+{
+  "name": "php-mcp-sdk-website",
+  "version": "1.0.0",
+  "description": "Documentation website for PHP MCP SDK",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "serve": "vitepress serve docs"
+  },
+  "keywords": [
+    "php",
+    "mcp",
+    "model-context-protocol",
+    "documentation",
+    "sdk"
+  ],
+  "author": "Dale Hurley",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.0.0",
+    "vue": "^3.4.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

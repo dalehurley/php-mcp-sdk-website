@@ -1,0 +1,7 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple geometric shape inspired by MCP logo -->
+  <path d="M16 4 L28 12 L28 20 L16 28 L4 20 L4 12 Z" 
+        fill="#667eea" 
+        stroke="#4f46e5" 
+        stroke-width="1"/>
+</svg>

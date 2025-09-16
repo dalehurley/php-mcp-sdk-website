@@ -29,7 +29,7 @@
   <circle cx="60" cy="15" r="6" fill="#28ca42"/>
   
   <!-- Terminal title -->
-  <text x="250" y="20" text-anchor="middle" font-family="SF Mono, Monaco, Consolas, monospace" font-size="12" fill="#cccccc">McpServer.php - PHP MCP SDK</text>
+  <text x="250" y="20" text-anchor="middle" font-family="SF Mono, Monaco, Consolas, monospace" font-size="12" fill="#cccccc">McpServer.php • PHP MCP SDK</text>
   
   <!-- Code content -->
   <g font-family="SF Mono, Monaco, Consolas, monospace" font-size="14">
@@ -50,6 +50,8 @@
       <text x="15" y="275">12</text>
       <text x="15" y="295">13</text>
       <text x="15" y="315">14</text>
+      <text x="15" y="335">15</text>
+      <text x="15" y="355">16</text>
     </g>
     
     <!-- Vertical line separator -->
@@ -103,9 +105,10 @@
     
     <text x="110" y="295" fill="#569cd6">function</text>
     <text x="180" y="295" fill="#cccccc">(</text>
-    <text x="186" y="295" fill="#9cdcfe">$args</text>
-    <text x="226" y="295" fill="#cccccc">)</text>
-    <text x="240" y="295" fill="#cccccc">{</text>
+    <text x="186" y="295" fill="#4ec9b0">array</text>
+    <text x="222" y="295" fill="#9cdcfe">$args</text>
+    <text x="260" y="295" fill="#cccccc">)</text>
+    <text x="270" y="295" fill="#cccccc">{</text>
     
     <text x="130" y="315" fill="#c586c0">return</text>
     <text x="180" y="315" fill="#ce9178">'MCP Connected!'</text>
@@ -118,7 +121,7 @@
     <text x="50" y="395" fill="#cccccc">}</text>
     
     <!-- Animated cursor -->
-    <rect x="319" y="303" width="2" height="16" fill="#ffffff">
+    <rect x="317" y="303" width="2" height="16" fill="#ffffff">
       <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
     </rect>
     
@@ -143,6 +146,7 @@
     <text x="155" y="20" font-family="SF Mono, Monaco, Consolas, monospace" font-size="12" fill="#569cd6">~/server</text>
     <text x="205" y="20" font-family="SF Mono, Monaco, Consolas, monospace" font-size="12" fill="#4ec9b0">$</text>
     <text x="220" y="20" font-family="SF Mono, Monaco, Consolas, monospace" font-size="12" fill="#cccccc">php mcpserver.php</text>
+    <text x="350" y="20" font-family="SF Mono, Monaco, Consolas, monospace" font-size="12" fill="#6a9955">✓</text>
     
     <!-- Blinking cursor in terminal -->
     <rect x="345" y="8" width="8" height="16" fill="#ffffff">

@@ -448,3 +448,4 @@ kubectl describe ingress mcp-ingress
 - [Scaling & Performance](scaling) - Optimize for high load
 
 Ready to deploy your PHP MCP SDK application to production! 🚀
+

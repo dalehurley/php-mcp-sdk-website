@@ -1333,3 +1333,4 @@ class RealTimeMetrics
 - [Security & Compliance](security) - Security considerations for scaling
 
 Scale your PHP MCP SDK applications to handle millions of requests! 🚀
+

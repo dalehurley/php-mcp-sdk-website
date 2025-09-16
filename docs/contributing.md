@@ -461,3 +461,4 @@ We follow [Semantic Versioning](https://semver.org/):
 - **Major releases** for significant changes
 
 Thank you for contributing to PHP MCP SDK! Your contributions help make AI development more accessible and powerful for the PHP community. 🎉
+

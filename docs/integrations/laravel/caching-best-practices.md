@@ -1356,4 +1356,4 @@ class CacheImplementationTest extends TestCase
 - [Server Implementation](server-implementation.md)
 - [Client Implementation](client-implementation.md)
 - [OpenAI Integration](openai-integration.md)
-- [Performance Guide](../guide/performance.md)
+- [Performance Guide](../../guide/performance)

@@ -1098,4 +1098,4 @@ setInterval(() => {
 - [Server Implementation](server-implementation.md)
 - [OpenAI Integration](openai-integration.md)
 - [Caching Best Practices](caching-best-practices.md)
-- [API Reference](../api/client.md)
+- [API Reference](../../api/client)

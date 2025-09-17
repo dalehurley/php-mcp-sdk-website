@@ -169,6 +169,27 @@ export default defineConfig({
             { text: "FullCX Integration", link: "/integrations/fullcx" },
           ],
         },
+        {
+          text: "Laravel MCP SDK",
+          items: [
+            {
+              text: "Server Implementation",
+              link: "/integrations/laravel/server-implementation",
+            },
+            {
+              text: "Client Implementation",
+              link: "/integrations/laravel/client-implementation",
+            },
+            {
+              text: "OpenAI Integration",
+              link: "/integrations/laravel/openai-integration",
+            },
+            {
+              text: "Caching Best Practices",
+              link: "/integrations/laravel/caching-best-practices",
+            },
+          ],
+        },
       ],
 
       "/agentic-ai/": [

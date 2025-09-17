@@ -50,10 +50,10 @@ class SamplingClient extends Client
 
         // Map MCP model hints to actual models
         $this->modelMappings = [
-            'claude-3-sonnet' => 'gpt-4-1106-preview',
+            'claude-3-sonnet' => 'gpt-4.1',
             'claude-3-haiku' => 'gpt-3.5-turbo',
-            'claude' => 'gpt-4-1106-preview',
-            'gpt-4' => 'gpt-4-1106-preview',
+            'claude' => 'gpt-4.1',
+            'gpt-4' => 'gpt-4.1',
             'gpt-3.5' => 'gpt-3.5-turbo'
         ];
 
@@ -123,14 +123,14 @@ class SamplingClient extends Client
 
         // Fallback to preference-based selection
         if ($intelligencePriority > 0.7) {
-            return 'gpt-4-1106-preview'; // High intelligence
+            return 'gpt-4.1'; // High intelligence
         } elseif ($speedPriority > 0.7) {
             return 'gpt-3.5-turbo'; // High speed
         } elseif ($costPriority > 0.7) {
             return 'gpt-3.5-turbo'; // Low cost
         }
 
-        return 'gpt-4-1106-preview'; // Default
+        return 'gpt-4.1'; // Default
     }
 
     private function convertMessagesToOpenAI(array $messages, ?string $systemPrompt): array
@@ -529,7 +529,7 @@ class IntelligentModelSelector
     {
         // Define model characteristics
         $this->modelCapabilities = [
-            'gpt-4-1106-preview' => 0.95,
+            'gpt-4.1' => 0.95,
             'gpt-4' => 0.90,
             'gpt-3.5-turbo' => 0.75,
             'claude-3-sonnet' => 0.92,
@@ -537,7 +537,7 @@ class IntelligentModelSelector
         ];
 
         $this->modelCosts = [
-            'gpt-4-1106-preview' => 0.9,
+            'gpt-4.1' => 0.9,
             'gpt-4' => 1.0,
             'gpt-3.5-turbo' => 0.1,
             'claude-3-sonnet' => 0.8,
@@ -545,7 +545,7 @@ class IntelligentModelSelector
         ];
 
         $this->modelSpeeds = [
-            'gpt-4-1106-preview' => 0.7,
+            'gpt-4.1' => 0.7,
             'gpt-4' => 0.6,
             'gpt-3.5-turbo' => 0.95,
             'claude-3-sonnet' => 0.8,
@@ -815,7 +815,7 @@ class SamplingTest extends TestCase
             ]
         ])->await();
 
-        $this->assertEquals('gpt-4-1106-preview', $this->mockProvider->getLastUsedModel());
+        $this->assertEquals('gpt-4.1', $this->mockProvider->getLastUsedModel());
     }
 }
 ```

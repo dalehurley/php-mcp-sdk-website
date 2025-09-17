@@ -1,25 +1,26 @@
-# Laravel Integration
+# Laravel MCP SDK - Complete Integration Guide
 
-Complete guide for integrating the PHP MCP SDK with Laravel applications, including service providers, Artisan commands, and middleware.
+The Laravel MCP SDK provides comprehensive support for the MCP 2025-06-18 specification with Laravel's elegant developer experience. This guide covers server implementation, client usage, OpenAI integration for agentic workflows, and production best practices.
 
-## Overview
+## Quick Start
 
-The PHP MCP SDK provides first-class Laravel support through dedicated service providers, Artisan commands, and Laravel-specific patterns. This guide covers everything you need to integrate MCP into your Laravel applications.
-
-## Installation
-
-### 1. Install the Core SDK
+### Installation
 
 ```bash
-composer require dalehurley/php-mcp-sdk
+composer require dalehurley/laravel-php-mcp-sdk
 ```
 
-### 2. Optional: Laravel-Specific Package
-
-For additional Laravel features:
+### Basic Setup
 
 ```bash
-composer require dalehurley/laravel-mcp-sdk
+# Install MCP scaffolding
+php artisan mcp:install
+
+# Create your first tool
+php artisan make:mcp-tool WeatherTool
+
+# Start the server
+php artisan mcp:server start
 ```
 
 ## Service Provider Setup

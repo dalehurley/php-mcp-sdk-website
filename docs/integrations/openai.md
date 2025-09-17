@@ -77,7 +77,7 @@ class OpenAIMcpAgent
         $functions = $this->convertMcpToolsToOpenAIFunctions();
 
         $response = $this->openai->chat()->create([
-            'model' => 'gpt-4-1106-preview',
+            'model' => 'gpt-4.1',
             'messages' => [
                 [
                     'role' => 'system',
@@ -133,7 +133,7 @@ class OpenAIMcpAgent
 
             // Send result back to OpenAI for final formatting
             $followUpResponse = $this->openai->chat()->create([
-                'model' => 'gpt-4-1106-preview',
+                'model' => 'gpt-4.1',
                 'messages' => [
                     [
                         'role' => 'system',
@@ -234,7 +234,7 @@ class MultiServerOpenAIAgent
 
         // Initial OpenAI call
         $response = $this->openai->chat()->create([
-            'model' => 'gpt-4-1106-preview',
+            'model' => 'gpt-4.1',
             'messages' => $messages,
             'functions' => $functions,
             'function_call' => 'auto'
@@ -257,7 +257,7 @@ class MultiServerOpenAIAgent
 
             // Continue conversation with OpenAI
             $response = $this->openai->chat()->create([
-                'model' => 'gpt-4-1106-preview',
+                'model' => 'gpt-4.1',
                 'messages' => $conversationHistory,
                 'functions' => $functions,
                 'function_call' => 'auto'
@@ -302,7 +302,7 @@ class StreamingMcpAgent
     public function streamResponse(string $userMessage, callable $onChunk): void
     {
         $stream = $this->openai->chat()->createStreamed([
-            'model' => 'gpt-4-1106-preview',
+            'model' => 'gpt-4.1',
             'messages' => [
                 ['role' => 'user', 'content' => $userMessage]
             ],

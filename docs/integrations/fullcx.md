@@ -332,7 +332,7 @@ class FullCXProductAgent
     public function processProductRequest(string $request): string
     {
         $response = $this->openai->chat()->create([
-            'model' => 'gpt-4-1106-preview',
+            'model' => 'gpt-4.1',
             'messages' => [
                 [
                     'role' => 'system',

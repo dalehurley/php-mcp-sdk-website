@@ -90,7 +90,7 @@ class AdvancedSamplingClient extends Client
             // Claude model hints -> Available models
             'claude-3-sonnet' => [
                 'anthropic' => 'claude-3-sonnet-20240229',
-                'openai' => 'gpt-4-1106-preview' // Fallback
+                'openai' => 'gpt-4.1' // Fallback
             ],
             'claude-3-haiku' => [
                 'anthropic' => 'claude-3-haiku-20240307',
@@ -98,12 +98,12 @@ class AdvancedSamplingClient extends Client
             ],
             'claude' => [
                 'anthropic' => 'claude-3-sonnet-20240229',
-                'openai' => 'gpt-4-1106-preview'
+                'openai' => 'gpt-4.1'
             ],
 
             // GPT model hints
             'gpt-4' => [
-                'openai' => 'gpt-4-1106-preview',
+                'openai' => 'gpt-4.1',
                 'anthropic' => 'claude-3-sonnet-20240229'
             ],
             'gpt-3.5' => [
@@ -113,7 +113,7 @@ class AdvancedSamplingClient extends Client
         ];
 
         $this->modelCapabilities = [
-            'gpt-4-1106-preview' => [
+            'gpt-4.1' => [
                 'intelligence' => 0.95,
                 'speed' => 0.6,
                 'cost' => 0.1,
@@ -822,7 +822,7 @@ You can customize model mappings based on your available providers:
 $customMappings = [
     'claude-3-sonnet' => [
         'anthropic' => 'claude-3-sonnet-20240229',
-        'openai' => 'gpt-4-1106-preview',
+        'openai' => 'gpt-4.1',
         'local' => 'llama-70b' // Local model fallback
     ]
 ];

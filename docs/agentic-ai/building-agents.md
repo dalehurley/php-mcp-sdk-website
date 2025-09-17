@@ -52,7 +52,7 @@ abstract class Agent
         $prompt = $this->buildThinkingPrompt($context, $availableActions);
 
         $response = $this->llm->chat()->create([
-            'model' => 'gpt-4-1106-preview',
+            'model' => 'gpt-4.1',
             'messages' => [
                 ['role' => 'system', 'content' => $this->systemPrompt],
                 ['role' => 'user', 'content' => $prompt]
@@ -164,7 +164,7 @@ class TaskAgent extends Agent
     private function analyzeRequest(string $request): RequestAnalysis
     {
         $response = $this->llm->chat()->create([
-            'model' => 'gpt-4-1106-preview',
+            'model' => 'gpt-4.1',
             'messages' => [
                 [
                     'role' => 'system',
@@ -248,7 +248,7 @@ class ResearchAgent extends Agent
         $availableTools = $this->getAllAvailableTools();
 
         $response = $this->llm->chat()->create([
-            'model' => 'gpt-4-1106-preview',
+            'model' => 'gpt-4.1',
             'messages' => [
                 [
                     'role' => 'system',
@@ -336,7 +336,7 @@ class PersonalAssistantAgent extends Agent
     private function classifyIntent(string $request): Intent
     {
         $response = $this->llm->chat()->create([
-            'model' => 'gpt-4-1106-preview',
+            'model' => 'gpt-4.1',
             'messages' => [
                 [
                     'role' => 'system',
@@ -444,7 +444,7 @@ class DecisionEngine
         $prompt = $this->buildDecisionPrompt($context);
 
         $response = $this->llm->chat()->create([
-            'model' => 'gpt-4-1106-preview',
+            'model' => 'gpt-4.1',
             'messages' => [
                 [
                     'role' => 'system',
@@ -652,7 +652,7 @@ class PersonalProductivityAgent extends Agent
     private function extractTaskDetails(string $request): array
     {
         $response = $this->llm->chat()->create([
-            'model' => 'gpt-4-1106-preview',
+            'model' => 'gpt-4.1',
             'messages' => [
                 [
                     'role' => 'system',

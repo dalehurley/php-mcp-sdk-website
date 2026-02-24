@@ -30,48 +30,100 @@ Serves the production build locally for testing
 
 ## 🚀 Deployment Options
 
-### GitHub Pages
+### GitHub Pages (with Custom Domain: phpmcpsdk.com)
 
-1. **Enable GitHub Pages** in repository settings
-2. **Set up GitHub Actions** workflow:
+This repository is pre-configured for GitHub Pages deployment via `.github/workflows/deploy.yml`.
+The workflow triggers automatically on every push to `main` and deploys to GitHub Pages using
+the official GitHub Actions deployment pipeline.
 
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy Documentation
+#### Step 1: Enable GitHub Pages in Repository Settings
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+1. Go to your repository on GitHub: `https://github.com/dalehurley/php-mcp-sdk-website`
+2. Click **Settings** → **Pages** (in the left sidebar under "Code and automation")
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**
+   - Do NOT select "Deploy from a branch" — the workflow handles everything
+4. Click **Save**
 
-jobs:
-  docs:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+#### Step 2: Configure the Custom Domain in GitHub
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: npm
+1. Still in **Settings** → **Pages**, find the **Custom domain** field
+2. Enter `phpmcpsdk.com` and click **Save**
+   - GitHub will verify DNS and create a `CNAME` file commit (this repo already has one in `docs/public/CNAME`)
+   - If GitHub creates a duplicate CNAME commit, you can remove it; the one in `docs/public/` is authoritative
+3. Leave the **Enforce HTTPS** checkbox unchecked for now — enable it after DNS propagation is confirmed
 
-      - name: Install dependencies
-        run: npm ci
+#### Step 3: Configure DNS at Your Domain Registrar
 
-      - name: Build documentation
-        run: npm run build
+Log in to your domain registrar (where you purchased `phpmcpsdk.com`) and add the following DNS records:
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/.vitepress/dist
+**For the apex domain (`phpmcpsdk.com`) — add 4 A records:**
+
+| Type | Name | Value |
+|------|------|-------|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+
+**For the `www` subdomain — add 1 CNAME record:**
+
+| Type | Name | Value |
+|------|------|-------|
+| CNAME | `www` | `dalehurley.github.io` |
+
+> **Note:** DNS propagation typically takes a few minutes to a few hours, but can take up to 48 hours.
+> You can check propagation status at [dnschecker.org](https://dnschecker.org).
+
+#### Step 4: Verify DNS and Enable HTTPS
+
+1. After DNS propagates, go back to **Settings** → **Pages**
+2. GitHub will show a green checkmark confirming your domain is verified
+3. Tick **Enforce HTTPS** and click **Save**
+   - GitHub automatically provisions a free TLS certificate via Let's Encrypt
+
+#### Step 5: Trigger the First Deployment
+
+Push any change to `main` (or use the **Actions** tab → **Deploy Documentation to GitHub Pages** → **Run workflow**) to trigger the first deployment.
+
+Once complete, the site will be live at `https://phpmcpsdk.com`.
+
+---
+
+#### How the Workflow Works
+
+The workflow in `.github/workflows/deploy.yml`:
+
+- Runs on every push to `main` and can be triggered manually via `workflow_dispatch`
+- Checks out the repo with full history (required for VitePress `lastUpdated` timestamps)
+- Installs dependencies with `npm ci` (reproducible installs)
+- Builds the site with `npm run build` → output goes to `docs/.vitepress/dist/`
+- Uploads the built directory as a GitHub Pages artifact
+- Deploys using the official `actions/deploy-pages@v4` action into the `github-pages` environment
+
+The `CNAME` file at `docs/public/CNAME` is automatically copied into the build output and tells
+GitHub Pages to serve the site on `phpmcpsdk.com`.
+
+#### Verify the Deployment
+
+After the workflow succeeds:
+
+```bash
+# Check that the site is live
+curl -I https://phpmcpsdk.com
+
+# Check that www redirects to apex
+curl -I https://www.phpmcpsdk.com
 ```
+
+#### Troubleshooting GitHub Pages
+
+| Issue | Solution |
+|-------|----------|
+| Workflow fails on "Setup Pages" | Ensure Source is set to "GitHub Actions" in Settings → Pages |
+| 404 on the custom domain | Check DNS records are correct and have propagated |
+| HTTPS not available | Wait for DNS to fully propagate before enabling HTTPS |
+| CNAME keeps getting reset | Remove any CNAME file on the `gh-pages` branch if one exists |
+| `lastUpdated` shows wrong date | Ensure `fetch-depth: 0` is present in the checkout step |
 
 ### Netlify
 

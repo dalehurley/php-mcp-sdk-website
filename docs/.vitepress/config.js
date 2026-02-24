@@ -8,6 +8,10 @@ export default defineConfig({
   // Re-enable dead link checking to identify issues
   ignoreDeadLinks: false,
 
+  sitemap: {
+    hostname: "https://phpmcpsdk.com",
+  },
+
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
     ["meta", { name: "theme-color", content: "#646cff" }],

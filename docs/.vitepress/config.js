@@ -3,9 +3,8 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "PHP MCP SDK",
   description:
-    "Model Context Protocol implementation for PHP - Build intelligent AI agents and applications",
+    "The most comprehensive Model Context Protocol SDK for PHP. Build intelligent AI agents, connect LLMs to external data sources, and create production-ready MCP servers and clients.",
 
-  // Re-enable dead link checking to identify issues
   ignoreDeadLinks: false,
 
   sitemap: {
@@ -13,12 +12,117 @@ export default defineConfig({
   },
 
   head: [
+    // Favicon
     ["link", { rel: "icon", href: "/favicon.ico" }],
+    ["link", { rel: "apple-touch-icon", href: "/images/logo.svg" }],
+
+    // Theme color
     ["meta", { name: "theme-color", content: "#646cff" }],
+
+    // SEO - canonical and keywords
+    ["link", { rel: "canonical", href: "https://phpmcpsdk.com" }],
+    [
+      "meta",
+      {
+        name: "keywords",
+        content:
+          "PHP MCP SDK, Model Context Protocol, PHP AI, MCP server, MCP client, PHP LLM, AI agents PHP, Claude PHP, OpenAI PHP, Laravel MCP, Symfony MCP",
+      },
+    ],
+    ["meta", { name: "author", content: "Dale Hurley" }],
+    ["meta", { name: "robots", content: "index, follow" }],
+
+    // Open Graph
     ["meta", { name: "og:type", content: "website" }],
     ["meta", { name: "og:locale", content: "en" }],
     ["meta", { name: "og:site_name", content: "PHP MCP SDK" }],
-    ["meta", { name: "og:image", content: "/images/og-image.png" }],
+    ["meta", { name: "og:url", content: "https://phpmcpsdk.com" }],
+    [
+      "meta",
+      {
+        name: "og:title",
+        content:
+          "PHP MCP SDK - Model Context Protocol for PHP AI Agents",
+      },
+    ],
+    [
+      "meta",
+      {
+        name: "og:description",
+        content:
+          "Build intelligent AI agents and MCP servers in PHP. Full MCP protocol support, async architecture, Laravel/Symfony integration, OAuth 2.0, and 20+ production examples.",
+      },
+    ],
+    ["meta", { name: "og:image", content: "https://phpmcpsdk.com/images/og-image.png" }],
+    ["meta", { name: "og:image:width", content: "1200" }],
+    ["meta", { name: "og:image:height", content: "630" }],
+
+    // Twitter Cards
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
+    ["meta", { name: "twitter:site", content: "@phpmcpsdk" }],
+    [
+      "meta",
+      {
+        name: "twitter:title",
+        content: "PHP MCP SDK - Model Context Protocol for PHP",
+      },
+    ],
+    [
+      "meta",
+      {
+        name: "twitter:description",
+        content:
+          "Build intelligent AI agents and MCP servers in PHP. Async-first, Laravel/Symfony ready, OAuth 2.0, 20+ examples.",
+      },
+    ],
+    [
+      "meta",
+      {
+        name: "twitter:image",
+        content: "https://phpmcpsdk.com/images/og-image.png",
+      },
+    ],
+
+    // JSON-LD Structured Data
+    [
+      "script",
+      { type: "application/ld+json" },
+      JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "PHP MCP SDK",
+        description:
+          "Model Context Protocol implementation for PHP. Build intelligent AI agents, MCP servers and clients with async support, OAuth 2.0, and framework integrations.",
+        url: "https://phpmcpsdk.com",
+        applicationCategory: "DeveloperApplication",
+        operatingSystem: "Any",
+        programmingLanguage: "PHP",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+        },
+        author: {
+          "@type": "Person",
+          name: "Dale Hurley",
+          url: "https://github.com/dalehurley",
+        },
+        license: "https://opensource.org/licenses/MIT",
+        codeRepository: "https://github.com/dalehurley/php-mcp-sdk",
+        softwareVersion: "1.0.0",
+        releaseNotes:
+          "https://github.com/dalehurley/php-mcp-sdk/blob/main/CHANGELOG.md",
+        keywords: [
+          "PHP",
+          "MCP",
+          "Model Context Protocol",
+          "AI agents",
+          "LLM",
+          "Laravel",
+          "Symfony",
+        ],
+      }),
+    ],
   ],
 
   themeConfig: {
@@ -30,6 +134,8 @@ export default defineConfig({
       { text: "API Reference", link: "/api/" },
       { text: "Integrations", link: "/integrations/" },
       { text: "Agentic AI", link: "/agentic-ai/" },
+      { text: "FAQ", link: "/faq" },
+      { text: "Community", link: "/community" },
       {
         text: "v1.0.0",
         items: [
@@ -37,6 +143,7 @@ export default defineConfig({
             text: "Changelog",
             link: "https://github.com/dalehurley/php-mcp-sdk/blob/main/CHANGELOG.md",
           },
+          { text: "Comparison", link: "/comparison" },
           { text: "Contributing", link: "/contributing" },
         ],
       },
@@ -81,6 +188,14 @@ export default defineConfig({
             { text: "Performance Optimization", link: "/guide/performance" },
             { text: "Testing", link: "/guide/testing" },
             { text: "Troubleshooting", link: "/guide/troubleshooting" },
+          ],
+        },
+        {
+          text: "Resources",
+          items: [
+            { text: "FAQ", link: "/faq" },
+            { text: "Community", link: "/community" },
+            { text: "Comparison", link: "/comparison" },
           ],
         },
       ],
@@ -227,8 +342,21 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/dalehurley/php-mcp-sdk" },
     ],
 
+    // Improvement 12: Enhanced footer with more useful links
     footer: {
-      message: "Released under the MIT License.",
+      message: `
+        <nav class="footer-links">
+          <a href="/guide/getting-started">Documentation</a> ·
+          <a href="/examples/">Examples</a> ·
+          <a href="/api/">API Reference</a> ·
+          <a href="/faq">FAQ</a> ·
+          <a href="/community">Community</a> ·
+          <a href="/comparison">Comparison</a> ·
+          <a href="https://github.com/dalehurley/php-mcp-sdk/blob/main/CHANGELOG.md" target="_blank">Changelog</a> ·
+          <a href="https://github.com/dalehurley/php-mcp-sdk" target="_blank">GitHub</a>
+        </nav>
+        Released under the MIT License.
+      `,
       copyright: "Copyright © 2025 Dale Hurley",
     },
 
@@ -260,7 +388,7 @@ export default defineConfig({
     },
     lineNumbers: true,
     config: (md) => {
-      // Add custom markdown plugins if needed
+      // Custom markdown plugins can be added here
     },
   },
 

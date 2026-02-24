@@ -4,23 +4,50 @@ This guide walks you through installing and setting up the PHP MCP SDK in your p
 
 ## System Requirements
 
-### PHP Version
+### PHP Version Compatibility
 
-- **PHP 8.1** or higher (recommended: PHP 8.3+)
-- Required extensions:
-  - `ext-json` - JSON processing
-  - `ext-mbstring` - Multibyte string handling
-  - `ext-openssl` - SSL/TLS support (for HTTPS transports)
+| PHP Version | Status | Notes |
+|-------------|--------|-------|
+| **8.4** | ✅ Compatible | Not yet in CI; works in practice |
+| **8.3** | ✅ Recommended | Best performance, latest features |
+| **8.2** | ✅ Supported | Production-ready |
+| **8.1** | ✅ Minimum | Supported; upgrade recommended |
+| 8.0 and below | ❌ Not supported | Missing fibre and enum support |
+| PHP 7.x | ❌ Not supported | EOL; not compatible |
+
+::: tip
+PHP 8.3+ is recommended for new projects. It includes performance improvements to fibers and JIT that benefit async MCP servers.
+:::
+
+### Required PHP Extensions
+
+| Extension | Purpose | How to Check |
+|-----------|---------|--------------|
+| `ext-json` | JSON encoding/decoding for MCP messages | `php -m \| grep json` |
+| `ext-mbstring` | Multibyte string handling | `php -m \| grep mbstring` |
+| `ext-openssl` | SSL/TLS for HTTPS and WSS transports | `php -m \| grep openssl` |
+
+```bash
+# Verify all required extensions are loaded
+php -r "
+  \$required = ['json', 'mbstring', 'openssl'];
+  foreach (\$required as \$ext) {
+    echo \$ext . ': ' . (extension_loaded(\$ext) ? 'OK' : 'MISSING') . PHP_EOL;
+  }
+"
+```
 
 ### Composer
 
-- Composer 2.0 or higher
+- Composer 2.0 or higher (`composer --version` to check)
 
 ### Optional Dependencies
 
-- **Node.js 18+** - For using MCP Inspector during development
-- **Redis** - For caching and session storage (production deployments)
-- **Docker** - For containerized deployments
+| Dependency | Purpose | Required For |
+|-----------|---------|-------------|
+| **Node.js 18+** | MCP Inspector GUI | Development debugging |
+| **Redis** | Session storage, caching | Production multi-process deployments |
+| **Docker** | Containerised deployment | Enterprise/cloud deployments |
 
 ## Installation Methods
 
